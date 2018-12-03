@@ -8,7 +8,9 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
-  <script src="type.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.9/push.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.9.3/countUp.min.js"></script>
+  <script src=" type.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,14 +18,40 @@
 <body>
   <div id="particles-js"></div>
   <script src="particles.js"></script>
-  <div class="typeAnimationWrapper align-middle">
-    <span id="type1" class="align-middle" style="height:68px"></span>
+  <div class="wrapper">
+    <div class="typeAnimationWrapper">
+      <span id="type1" class="align-middle" style="height:68px"></span>
+      <h1>Subscribers: <span id="test1"></span> </h1>
+    </div>
   </div>
+
   <div class="buttonlinks">
-    <a href="https://github.com/mattboldt/typed.js/"> <button type="button" class="btn btn-dark">Typed.js</button></a>
     <a href="https://mm909.github.io/typed.js/"> <button type="button" class="btn btn-dark">Typed.js Example</button></a>
+    <a href="https://github.com/mattboldt/typed.js/"> <button type="button" class="btn btn-dark">Typed.js</button></a>
     <a href="https://vincentgarreau.com/particles.js/"> <button type="button" class="btn btn-dark">Particles.js</button></a>
+    <a href="https://github.com/inorganik/countUp.js"> <button type="button" class="btn btn-dark">countUp.js</button></a>
   </div>
+  <script type="text/javascript">
+    // Push.create("Hello world!", {
+    //   body: "How's it hangin'?",
+    //   timeout: 4000,
+    //   onClick: function() {
+    //     window.focus();
+    //     this.close();
+    //   }
+    // });
+    var numAnim = new CountUp("test1", 0, 1000000, 0, 10);
+    start();
+
+    function start() {
+      numAnim.start(function() {
+        window.setTimeout(function() {
+          numAnim.reset();
+          start()
+        }, 3000);
+      });
+    }
+  </script>
 </body>
 
 </html>
