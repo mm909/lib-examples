@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
     strings: [
       ' <h1>This is an example of typed.js</h1>',
       ' <h1>The dots/lines are an example of particles.js</h1>',
-      ' <h1>Below is an example of countup.js</h1>',
+      ' <h1>Above is an example of countup.js</h1>',
       ' <h1>Want to learn how to add these to your website?</h1>',
       ' <h1>Ask an instructor!</h1>',
     ],
